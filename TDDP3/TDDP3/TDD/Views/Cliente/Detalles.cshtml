@@ -1,0 +1,72 @@
+﻿@model TDD.Data.Cliente
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1 id="title">Detalles</h1>
+
+<div id="container">
+    <h4 id="subtitle">Cliente</h4>
+    <hr id="separator" />
+    <dl class="row" id="details">
+        <dt class="col-sm-2" id="label-codigo">
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+        <dd class="col-sm-10" id="codigo">
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+        <dt class="col-sm-2" id="label-cedula">
+            @Html.DisplayNameFor(model => model.Cedula)
+        </dt>
+        <dd class="col-sm-10" id="cedula">
+            @Html.DisplayFor(model => model.Cedula)
+        </dd>
+        <dt class="col-sm-2" id="label-apellidos">
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+        <dd class="col-sm-10" id="apellidos">
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+        <dt class="col-sm-2" id="label-nombres">
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+        <dd class="col-sm-10" id="nombres">
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+        <dt class="col-sm-2" id="label-fecha-nacimiento">
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+        <dd class="col-sm-10" id="fecha-nacimiento">
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+        <dt class="col-sm-2" id="label-mail">
+            @Html.DisplayNameFor(model => model.Mail)
+        </dt>
+        <dd class="col-sm-10" id="mail">
+            @Html.DisplayFor(model => model.Mail)
+        </dd>
+        <dt class="col-sm-2" id="label-telefono">
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd class="col-sm-10" id="telefono">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt class="col-sm-2" id="label-direccion">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd class="col-sm-10" id="direccion">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt class="col-sm-2" id="label-estado">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-10" id="estado">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+    </dl>
+</div>
+<div id="buttons">
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }, new { id = "edit-link" }) |
+    <a asp-action="Index" id="back-link">Back to List</a>
+</div>

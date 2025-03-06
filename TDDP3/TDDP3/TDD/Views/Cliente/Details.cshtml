@@ -1,0 +1,74 @@
+﻿@model TDD.Data.Cliente
+
+@{
+    ViewData["Title"] = "Detalles del Cliente";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons (opcional) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+    <link href="~/css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="body">
+    <div class="container mt-4" id="container">
+        <div class="card shadow-lg p-4" id="card-details">
+            <h1 class="text-center text-info" id="title"><i class="bi bi-person-circle"></i> Detalles del Cliente</h1>
+            <h4 class="text-secondary text-center" id="subtitle">Información del cliente</h4>
+            <hr id="separator" />
+
+            <div class="row" id="row-details">
+                <div class="col-md-8 offset-md-2" id="details-column">
+                    <dl class="row" id="details">
+                        <dt class="col-sm-4 fw-bold text-end" id="label-codigo">Código:</dt>
+                        <dd class="col-sm-8" id="codigo">@Html.DisplayFor(model => model.Codigo)</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end" id="label-cedula">Cédula:</dt>
+                        <dd class="col-sm-8" id="cedula">@Html.DisplayFor(model => model.Cedula)</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end" id="label-apellidos">Apellidos:</dt>
+                        <dd class="col-sm-8" id="apellidos">@Html.DisplayFor(model => model.Apellidos)</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end" id="label-nombres">Nombres:</dt>
+                        <dd class="col-sm-8" id="nombres">@Html.DisplayFor(model => model.Nombres)</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end" id="label-fecha-nacimiento">Fecha de Nacimiento:</dt>
+                        <dd class="col-sm-8" id="fecha-nacimiento">@Html.DisplayFor(model => model.FechaNacimiento)</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end" id="label-mail">Correo:</dt>
+                        <dd class="col-sm-8" id="mail">@Html.DisplayFor(model => model.Mail)</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end" id="label-telefono">Teléfono:</dt>
+                        <dd class="col-sm-8" id="telefono">@Html.DisplayFor(model => model.Telefono)</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end" id="label-direccion">Dirección:</dt>
+                        <dd class="col-sm-8" id="direccion">@Html.DisplayFor(model => model.Direccion)</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end" id="label-estado">Estado:</dt>
+                        <dd class="col-sm-8" id="estado">@Html.DisplayFor(model => model.Estado)</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- Sección de botones -->
+            <div class="d-flex justify-content-center gap-3 mt-4" id="buttons">
+                <a asp-action="Edit" asp-route-id="@Model.Codigo" class="btn btn-warning" id="edit-button">
+                    <i class="bi bi-pencil-square"></i> Editar
+                </a>
+                <a asp-action="Index" class="btn btn-secondary" id="back-button">
+                    <i class="bi bi-arrow-left"></i> Volver a la lista
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle (con Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" id="bootstrap-js"></script>
+</body>

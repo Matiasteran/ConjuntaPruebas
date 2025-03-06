@@ -1,0 +1,104 @@
+﻿@model TDD.Data.Cliente
+
+@{
+    ViewData["Title"] = "Cliente";
+}
+
+<head>
+    <meta charset="utf-8" id="metaCharset" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" id="metaViewport" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrapCSS" />
+
+    <!-- Bootstrap Icons (opcional) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" id="bootstrapIcons" />
+
+</head>
+
+<body>
+    <div class="container mt-4" id="container">
+        <h1 class="text-center text-primary" id="tituloPrincipal"><i class="bi bi-person"></i> Cliente</h1>
+        <h4 class="text-secondary" id="subtitulo">Información del Cliente</h4>
+        <hr id="separador" />
+
+        <div class="card shadow-lg p-4" id="cardFormulario">
+            <form asp-action="Create" id="formularioCliente">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" id="validacionResumen"></div>
+
+                <div class="row g-3" id="filaFormulario">
+                    <!-- Primera columna -->
+                    <div class="col-md-6" id="columna1">
+
+                        <div class="mb-3" id="grupoCedula">
+                            <label asp-for="Cedula" class="form-label fw-bold" id="etiquetaCedula"></label>
+                            <input asp-for="Cedula" class="form-control" placeholder="Ingrese la cédula" id="inputCedula" />
+                            <span asp-validation-for="Cedula" class="text-danger" id="validacionCedula"></span>
+                        </div>
+
+                        <div class="mb-3" id="grupoApellidos">
+                            <label asp-for="Apellidos" class="form-label fw-bold" id="etiquetaApellidos"></label>
+                            <input asp-for="Apellidos" class="form-control" placeholder="Ingrese los apellidos" id="inputApellidos" />
+                            <span asp-validation-for="Apellidos" class="text-danger" id="validacionApellidos"></span>
+                        </div>
+
+                        <div class="mb-3" id="grupoNombres">
+                            <label asp-for="Nombres" class="form-label fw-bold" id="etiquetaNombres"></label>
+                            <input asp-for="Nombres" class="form-control" placeholder="Ingrese los nombres" id="inputNombres" />
+                            <span asp-validation-for="Nombres" class="text-danger" id="validacionNombres"></span>
+                        </div>
+
+                        <div class="mb-3" id="grupoFechaNacimiento">
+                            <label asp-for="FechaNacimiento" class="form-label fw-bold" id="etiquetaFechaNacimiento"></label>
+                            <input asp-for="FechaNacimiento" type="date" class="form-control" id="inputFechaNacimiento" />
+                            <span asp-validation-for="FechaNacimiento" class="text-danger" id="validacionFechaNacimiento"></span>
+                        </div>
+
+                    </div>
+
+                    <!-- Segunda columna -->
+                    <div class="col-md-6" id="columna2">
+                        <div class="mb-3" id="grupoMail">
+                            <label asp-for="Mail" class="form-label fw-bold" id="etiquetaMail"></label>
+                            <input asp-for="Mail" type="email" class="form-control" placeholder="correo@ejemplo.com" id="inputMail" />
+                            <span asp-validation-for="Mail" class="text-danger" id="validacionMail"></span>
+                        </div>
+
+                        <div class="mb-3" id="grupoTelefono">
+                            <label asp-for="Telefono" class="form-label fw-bold" id="etiquetaTelefono"></label>
+                            <input asp-for="Telefono" class="form-control" placeholder="Ingrese el teléfono" id="inputTelefono" />
+                            <span asp-validation-for="Telefono" class="text-danger" id="validacionTelefono"></span>
+                        </div>
+
+                        <div class="mb-3" id="grupoDireccion">
+                            <label asp-for="Direccion" class="form-label fw-bold" id="etiquetaDireccion"></label>
+                            <textarea asp-for="Direccion" class="form-control" rows="2" placeholder="Ingrese la dirección" id="inputDireccion"></textarea>
+                            <span asp-validation-for="Direccion" class="text-danger" id="validacionDireccion"></span>
+                        </div>
+
+                        <div class="form-check mb-3" id="grupoEstado">
+                            <input class="form-check-input" type="checkbox" asp-for="Estado" id="inputEstado" />
+                            <label class="form-check-label fw-bold" id="etiquetaEstado">@Html.DisplayNameFor(model => model.Estado)</label>
+                        </div>
+
+                    </div>
+
+                    <!-- Botones de acción -->
+                    <div class="d-flex justify-content-center gap-3 mt-4" id="grupoBotones">
+                        <button type="submit" class="btn btn-primary" id="botonGuardar">
+                            <i class="bi bi-save"></i> Guardar
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary" id="botonVolver">
+                            <i class="bi bi-arrow-left"></i> Volver a la lista
+                        </a>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle (con Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" id="bootstrapJS"></script>
+</body>
